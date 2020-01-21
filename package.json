@@ -10,7 +10,6 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "deploy:github": "cross-env DEPLOY='github' run-s build send:github",
     "send:github": "push-dir --dir=dist --branch=gh-pages --message='[ci skip] Deploy'"
   },
   "lint-staged": {
