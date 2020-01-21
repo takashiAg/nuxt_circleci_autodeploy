@@ -14,8 +14,8 @@ jobs:
       - run:
           name: Build Project
           command: npm run generate:gh-pages
-      # - run: git config user.name $GITHUB_NAME
-      # - run: git config user.email $GITHUB_EMAIL
+      - run: git config user.name $GITHUB_NAME
+      - run: git config user.email $GITHUB_EMAIL
       - run:
           name: Deploy
           command: npm run send:gh-pages
