@@ -5,12 +5,12 @@ jobs:
       - image: node:12.13.0
     steps:
       - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - 'xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx'
       - run:
           name: Install Node dependencies
           command: npm install
+      - run:
+          name: Build Project
+          command: npm run build
       - run:
           name: Deploy
           command: |
