@@ -10,8 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "deploy:github": "cross-env DEPLOY='github' run-s build send:github",
-    "send:github": "push-dir --dir=dist --branch=gh-pages --message='[ci skip] Deploy'"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "send:gh-pages": "push-dir --dir=dist --branch=gh-pages --message='[ci skip] Deploy'"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
@@ -22,9 +22,10 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^3.0.0-0"
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0",
+    "push-dir": "^0.4.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",
