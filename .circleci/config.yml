@@ -13,10 +13,10 @@ jobs:
           command: npm install
       - run:
           name: Build Project
-          command: npm run generate
+          command: npm run generate:gh-pages
       - run:
           name: Deploy
-          command: npm run send:github
+          command: npm run send:gh-pages
 workflows:
   version: 2
   deploy:
