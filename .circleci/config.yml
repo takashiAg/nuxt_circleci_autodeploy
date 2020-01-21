@@ -5,6 +5,9 @@ jobs:
       - image: node:12.13.0
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - '8e:e9:7b:ad:87:6d:67:da:ee:45:21:ab:d7:26:66:9e'
       - run:
           name: Install Node dependencies
           command: npm install
