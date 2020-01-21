@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build_deploy:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - 'xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx'
+      - run:
+          name: Install Node dependencies
+          command: npm install
+      - run:
+          name: Deploy
+          command: |
+            git config --global user.name "Circle CI"
+            git config --global user.email "<>"
+            npm run deploy:github
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build_deploy:
+          filters:
+            branches:
+              only:
+                - master
