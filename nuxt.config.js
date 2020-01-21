@@ -7,7 +7,6 @@ const routerBase =
         }
       }
     : {}
-
 export default {
   mode: 'spa',
   /*
@@ -94,7 +93,7 @@ export default {
       }
     }
   },
-  routerBase,
+  ...routerBase,
   /*
    ** Build configuration
    */
