@@ -12,6 +12,9 @@ jobs:
           name: Install Node dependencies
           command: npm install
       - run:
+          name: Build Project
+          command: npm run build
+      - run:
           name: Deploy
           command: |
             git config --global user.name "Circle CI"
